@@ -1,15 +1,27 @@
-package oop;
+package oop.animal;
 
 public class Dog {
     //attribute, field, property
     private String voice;
 
-    public String colorOfFur;
+    public static String colorOfFur;
+
+    protected String name;
+
+    //A dog can bark or not
+    private static boolean barkAbility = true;
+
+    public Dog() {
+    }
 
     //constructor
     public Dog(String voice, String colorOfFur){
         this.voice = voice;
         this.colorOfFur = colorOfFur;
+    }
+
+    public static boolean isBarkAbility() {
+        return barkAbility;
     }
 
     //behavior, method, function
@@ -18,7 +30,7 @@ public class Dog {
 
     }
     public void sua(){
-        System.out.println(voice);
+        System.out.println(this.voice);
     }
 
     /**
@@ -39,4 +51,9 @@ public class Dog {
     public String getVoice(){
         return voice;
     }
+
+    class ChihuahuaDog{
+
+    }
 }
+
