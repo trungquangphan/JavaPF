@@ -1,9 +1,6 @@
 package oop.animal;
 
-public class Dog {
-    //attribute, field, property
-    private String voice;
-
+public class Dog extends Animal{
     public static String colorOfFur;
 
     protected String name;
@@ -12,11 +9,12 @@ public class Dog {
     private static boolean barkAbility = true;
 
     public Dog() {
+        super();
     }
 
     //constructor
     public Dog(String voice, String colorOfFur){
-        this.voice = voice;
+        super(voice);
         this.colorOfFur = colorOfFur;
     }
 
@@ -30,7 +28,7 @@ public class Dog {
 
     }
     public void sua(){
-        System.out.println(this.voice);
+        System.out.println(this.getVoice());
     }
 
     /**
@@ -38,22 +36,18 @@ public class Dog {
      * @param colorOfFur
      */
     public void nhuom(String colorOfFur) {
-        if("gau gau".equals(voice)){
+        if("gau gau".equals(this.getVoice())){
             this.colorOfFur = colorOfFur;
         }
+    }
+
+    @Override public void keu() {
+        System.out.println("Con cho keu: "+ this.getVoice());
     }
 
     public String getColorOfFur(){
         return this.colorOfFur;
     }
 
-
-    public String getVoice(){
-        return voice;
-    }
-
-    class ChihuahuaDog{
-
-    }
 }
 

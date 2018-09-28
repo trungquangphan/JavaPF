@@ -4,10 +4,14 @@ public class Cat extends Animal {
 
     int height;
 
-
+    public Cat() {
+        super();
+        this.height = 100;
+    }
 
     public Cat(String voice) {
         super(voice);
+        this.height = 100;
     }
 
     public Cat(String voice, int height){
