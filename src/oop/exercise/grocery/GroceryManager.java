@@ -35,7 +35,7 @@ public class GroceryManager {
          */
         Customer peter = new Customer("peter", "456", "da nang");
         Date dateOfPetersOrder = createDate("12/5/2018");
-        DiscountBill discountBill = new DiscountBill(peter, dateOfPetersOrder, false);
+        DiscountBill discountBill = new DiscountBill(peter, dateOfPetersOrder, true);
         discountBill.add(readyMadeCake);
         discountBill.add(winterShoe);
         discountBill.printReceipt();
