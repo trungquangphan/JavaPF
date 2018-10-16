@@ -30,6 +30,7 @@ public class DiscountBill extends GroceryBill{
         System.out.println("Customer: " + getCustomer().getName());
         System.out.println("Address: " + getCustomer().getAddress());
         System.out.println("Phone number: " + getCustomer().getPhone());
+        System.out.println("Preferred: " + preferred);
         System.out.println("--- LIST OF ITEMS---");
         for (int i = 0; i < numberOfItems; i++) {
             System.out.println("Item  " + i);
