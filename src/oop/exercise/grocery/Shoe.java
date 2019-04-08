@@ -1,6 +1,6 @@
 package oop.exercise.grocery;
 
-public class Shoe implements Item{
+public class Shoe extends Item{
     private ShoeType shoeType;
     private String name;
     private int size;
@@ -23,15 +23,6 @@ public class Shoe implements Item{
 
     @Override public double getPrice() {
         return priceOfShoe;
-    }
-
-    @Override public boolean supportDiscountCondition(DiscountCondition discountCondition) {
-        for (String supported_discount_condition : SUPPORTED_DISCOUNT_CONDITIONS) {
-            if( supported_discount_condition.equals(discountCondition.getNameOfCondition())){
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override public double getDiscount(DiscountCondition[] discountConditions) {
@@ -71,7 +62,9 @@ public class Shoe implements Item{
                 ", priceOfShoe=" + priceOfShoe;
     }
 
-
+    @Override public String[] getSupportedDiscountConditions() {
+        return SUPPORTED_DISCOUNT_CONDITIONS;
+    }
 
     public int getPriceOfShoe() {
         return priceOfShoe;

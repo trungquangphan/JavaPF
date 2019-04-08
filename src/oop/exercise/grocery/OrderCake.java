@@ -34,21 +34,8 @@ public class OrderCake extends Cake {
         if(discountConditions == null || discountConditions.length ==0 ){
             return discountAmount;
         }
-        for (DiscountCondition discountCondition : discountConditions) {
-            if(supportDiscountCondition(discountCondition)){
-                /**
-                 * We are at OrderCake class, we know how to calculate the discount for these items
-                 */
 
-                if(discountCondition instanceof NameOfCustomerCondition){
-                    NameOfCustomerCondition nameOfCustomerCondition = (NameOfCustomerCondition) discountCondition;
-                    if(nameOfCustomerCondition.willGetDiscount()){
-                        discountAmount += nameOfCustomerCondition.getDiscountAmount();
-                    }
-                }
-
-            }
-        }
+        discountAmount += this.getBaseDiscount(discountConditions);
         return discountAmount;
     }
 
@@ -56,13 +43,8 @@ public class OrderCake extends Cake {
         return toString() + ", price: " + getPrice();
     }
 
-    @Override public boolean supportDiscountCondition(DiscountCondition discountCondition) {
-        for (String supported_discount_condition : SUPPORTED_DISCOUNT_CONDITIONS) {
-            if( supported_discount_condition.equals(discountCondition.getNameOfCondition())){
-                return true;
-            }
-        }
-        return false;
+    @Override public String[] getSupportedDiscountConditions() {
+        return SUPPORTED_DISCOUNT_CONDITIONS;
     }
 
     public String toString () {

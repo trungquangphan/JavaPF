@@ -2,6 +2,8 @@ package oop.exercise.grocery;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GroceryBill {
     private Customer customer;

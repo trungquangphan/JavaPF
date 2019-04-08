@@ -2,21 +2,30 @@ package array;
 
 public class HelloArray {
 
-
+    /***
+     * Data_Type [] variable_name = new Data_Type[size];
+     */
     public static void main(String[] args) {
-        String chuoi1 = "hello";
-        String chuoi2 = "java";
-        hienThiChuoiNoi(chuoi1, chuoi2);
-        System.out.println(chuoi1);
+//        int[] a = {50, 100};
+//        method(a);
+//        System.out.println(a[0]);
+
+        int x  = 1;
+        cal(x);
+        System.out.println(x);
+
+    }
+    static void cal(int x) {
+        x+=10;
     }
 
-    public static void hienThiChuoiNoi(String chuoi1, String chuoi2) {
-        if ("".equals(chuoi1)) {
-            return;
-        }
-        chuoi1 = chuoi1 + " " + chuoi2;
-        System.out.println(" " + chuoi1);
+    static void method(int[] x) {
+        x[0] = 200;
     }
+
+
+
+
 }
 
 

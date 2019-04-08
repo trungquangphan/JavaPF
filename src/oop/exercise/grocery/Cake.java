@@ -1,6 +1,6 @@
 package oop.exercise.grocery;
 
-public abstract class Cake implements Item {
+public abstract class Cake extends Item {
     protected String name;
     protected double rate;
     protected final int DISCOUNT_IN_PERCENT = 20;
