@@ -30,11 +30,6 @@ public class OrderCake extends Cake {
         if(weight > 1){
             discountAmount += DISCOUNT_IN_PERCENT/100*this.getPrice();
         }
-        //We should not check the discount condition if it is empty
-        if(discountConditions == null || discountConditions.length ==0 ){
-            return discountAmount;
-        }
-
         discountAmount += this.getBaseDiscount(discountConditions);
         return discountAmount;
     }
